@@ -116,6 +116,9 @@ int main(const int argc, const char** argv)
     }
     uint8_t cout;
     uint8_t* r = calloc(4, sizeof(uint8_t));
+    /**
+     * LSB first
+     */
     uint8_t a[5] = { 0, 1, 1, 1 };
     uint8_t b[5] = { 1, 0, 0, 0 };
     n_bit_add(4, &r, a, b, 0, &cout);
