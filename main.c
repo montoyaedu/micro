@@ -21,6 +21,11 @@ uint8_t not(uint8_t a)
     return ~(a & 0xff) & 0x1;
 }
 
+uint8_t nand(uint8_t a, uint8_t b)
+{
+    return not(and(a, b));
+}
+
 int main(const int argc, const char** argv)
 {
     fprintf(stdout, "AND GATE\n");
@@ -48,6 +53,13 @@ int main(const int argc, const char** argv)
     fprintf(stdout, "A RESULT\n");
     for (int a = 0; a <= 1; a++) {
         fprintf(stdout, "%x = %x\n", a, not(a));
+    }
+    fprintf(stdout, "NAND GATE\n");
+    fprintf(stdout, "A B RESULT\n");
+    for (int a = 0; a <= 1; a++) {
+        for (int b = 0; b <= 1; b++) {
+            fprintf(stdout, "%x %x = %x\n", a, b, nand(a, b));
+        }
     }
     return 0;
 }
