@@ -16,6 +16,11 @@ uint8_t xor(uint8_t a, uint8_t b)
     return a ^ b;
 }
 
+uint8_t not(uint8_t a)
+{
+    return ~(a & 0xff) & 0x1;
+}
+
 int main(const int argc, const char** argv)
 {
     fprintf(stdout, "AND GATE\n");
@@ -38,6 +43,11 @@ int main(const int argc, const char** argv)
         for (int b = 0; b <= 1; b++) {
             fprintf(stdout, "%x %x = %x\n", a, b, xor(a, b));
         }
+    }
+    fprintf(stdout, "NOT GATE\n");
+    fprintf(stdout, "A RESULT\n");
+    for (int a = 0; a <= 1; a++) {
+        fprintf(stdout, "%x = %x\n", a, not(a));
     }
     return 0;
 }
