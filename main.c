@@ -32,6 +32,15 @@ uint8_t half_add(uint8_t a, uint8_t b, uint8_t* cout)
     return xor(a, b);
 }
 
+uint8_t full_add(uint8_t a, uint8_t b, uint8_t cin, uint8_t* cout)
+{
+    uint8_t cout1, cout2;
+    uint8_t sum1 = half_add(a, b, &cout1);
+    uint8_t sum2 = half_add(cin, sum1, &cout2);
+    *cout = or(cout1, cout2);
+    return sum2;
+}
+
 int main(const int argc, const char** argv)
 {
     fprintf(stdout, "AND GATE\n");
@@ -73,6 +82,16 @@ int main(const int argc, const char** argv)
         for (int b = 0; b <= 1; b++) {
             uint8_t cout;
             fprintf(stdout, "%x %x = %x       %x\n", a, b, half_add(a, b, &cout), cout);
+        }
+    }
+    fprintf(stdout, "FULL ADDER\n");
+    fprintf(stdout, "CARRY-IN A B RESULT CARRY-OUT\n");
+    for (int cin = 0; cin <= 1; cin++) {
+        for (int a = 0; a <= 1; a++) {
+            for (int b = 0; b <= 1; b++) {
+                uint8_t cout;
+                fprintf(stdout, "%x        %x %x = %x       %x\n", cin, a, b, full_add(a, b, cin, &cout), cout);
+            }
         }
     }
     return 0;
