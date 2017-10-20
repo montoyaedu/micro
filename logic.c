@@ -12,9 +12,11 @@ char* printable(int n, uint8_t* array)
     return r;
 }
 
-uint8_t and(uint8_t a, uint8_t b)
+bit_t and(bit_t a, bit_t b)
 {
-    return a & b;
+    bit_t r;
+    r.bit = a.bit & b.bit;
+    return r;
 }
 
 uint8_t or(uint8_t a, uint8_t b)
@@ -34,12 +36,20 @@ uint8_t not(uint8_t a)
 
 uint8_t nand(uint8_t a, uint8_t b)
 {
-    return not(and(a, b));
+    bit_t _a;
+    bit_t _b;
+    _a.data = a;
+    _b.data = b;
+    return not(and(_a, _b).bit);
 }
 
 uint8_t half_add(uint8_t a, uint8_t b, uint8_t* cout)
 {
-    *cout = and(a, b);
+    bit_t _a;
+    bit_t _b;
+    _a.data = a;
+    _b.data = b;
+    *cout = and(_a, _b).bit;
     return xor(a, b);
 }
 

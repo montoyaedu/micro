@@ -7,7 +7,11 @@ int main(const int argc, const char** argv)
     fprintf(stdout, "A B RESULT\n");
     for (int a = 0; a <= 1; a++) {
         for (int b = 0; b <= 1; b++) {
-            fprintf(stdout, "%x %x = %x\n", a, b, and(a, b));
+            bit_t bit_a;
+            bit_a.data = a;
+            bit_t bit_b;
+            bit_b.data = b;
+            fprintf(stdout, "%x %x = %x\n", bit_a.bit, bit_b.bit, and(bit_a, bit_b).bit);
         }
     }
     fprintf(stdout, "OR GATE\n");

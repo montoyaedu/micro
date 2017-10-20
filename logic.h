@@ -4,8 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef union {
+    uint8_t data;
+    uint8_t bit : 1;
+} bit_t;
+
 char* printable(int n, uint8_t* array);
-uint8_t and(uint8_t a, uint8_t b);
+bit_t and(bit_t a, bit_t b);
 uint8_t or(uint8_t a, uint8_t b);
 uint8_t xor(uint8_t a, uint8_t b);
 uint8_t not(uint8_t a);
