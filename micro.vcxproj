@@ -7,10 +7,10 @@
   </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="micro.h" />
+    <ClInclude Include="logic.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="micro.c" />
+    <ClCompile Include="logic.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.default.props" />
