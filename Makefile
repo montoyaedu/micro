@@ -1,2 +1,2 @@
 main: main.c logic.c logic.h
-	gcc -O0 -g -o main main.c logic.c
+	gcc -std=c99 -O0 -g -o main main.c logic.c
