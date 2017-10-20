@@ -5,7 +5,7 @@
 
 char* printable(int n, uint8_t* array)
 {
-    char* r = calloc(n + 1, sizeof(char));
+    char* r = (char*) calloc(n + 1, sizeof(char));
     for (int i = 0, j = n - 1; i < n; i++, j--) {
         r[j] = array[i] + '0';
     }
