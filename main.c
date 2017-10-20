@@ -44,7 +44,7 @@ int main(const int argc, const char** argv)
     fprintf(stdout, "A B RESULT CARRY-OUT\n");
     for (int a = 0; a <= 1; a++) {
         for (int b = 0; b <= 1; b++) {
-            uint8_t cout;
+            uint8_t cout = 0;
             fprintf(stdout, "%x %x = %x       %x\n", a, b, half_add(a, b, &cout), cout);
         }
     }
@@ -53,7 +53,7 @@ int main(const int argc, const char** argv)
     for (int cin = 0; cin <= 1; cin++) {
         for (int a = 0; a <= 1; a++) {
             for (int b = 0; b <= 1; b++) {
-                uint8_t cout;
+                uint8_t cout = 0;
                 fprintf(stdout, "%x        %x %x = %x       %x\n", cin, a, b, full_add(a, b, cin, &cout), cout);
             }
         }
