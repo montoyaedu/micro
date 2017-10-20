@@ -59,7 +59,7 @@ int main(const int argc, const char** argv)
         }
     }
     uint8_t cout;
-    uint8_t* r = calloc(4, sizeof(uint8_t));
+    uint8_t* r = (uint8_t*) calloc(4, sizeof(uint8_t));
     /**
      * LSB first
      */
